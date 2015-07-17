@@ -1,0 +1,22 @@
+<div class="main-content-container">
+  <div class="content-offset">
+    
+    <div class="players">
+      <div layout="row" layout-wrap>
+        <div flex="33" ng-repeat="player in players track by $id(player)">
+          <md-card>
+            <md-card-content align="center">
+              <b>{{ player.user.first }} {{ player.user.last }}</b><br>
+              <em>{{ player.user.nickname }}</em><br>
+            </md-card-content>
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button>Profile</md-button>
+              <md-button>Talk</md-button>
+            </div>
+          </md-card>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
