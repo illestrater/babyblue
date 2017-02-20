@@ -1,0 +1,36 @@
+<div class="main-content-container">
+  <div class="content-offset">
+
+    <div class="profile">
+      <div class="glass glass-profile">
+        <div class="registration-container">
+          <div class="registration-title">
+            Player Profile: <strong><span ng-bind="vm.title"></span></strong>
+          </div>
+          <span style="position: absolute; right: 5%; top: 5%;" ng-if="vm.own === true"><md-button ng-click="vm.edit()">Edit Profile</md-button></span>
+          <hr><br>
+          <div layout="row">
+            <div flex>
+              Full name: <span ng-bind="vm.player.first"></span> <span ng-bind="vm.player.last"></span><br>
+              Player name: <span ng-bind="vm.player.username"></span><br>
+              Team: <span></span><br><br>
+
+              Handling: <span ng-repeat="star in vm.stars(vm.player.player.handling) track by $index">★</span><br>
+              Endurance: <span ng-repeat="star in vm.stars(vm.player.player.endurance) track by $index">★</span><br>
+              Quickness: <span ng-repeat="star in vm.stars(vm.player.player.quickness) track by $index">★</span><br>
+              Height: <span ng-repeat="star in vm.stars(vm.player.player.height) track by $index">★</span><br>
+              Shooting: <span ng-repeat="star in vm.stars(vm.player.player.shooting) track by $index">★</span><br>
+              Power: <span ng-repeat="star in vm.stars(vm.player.player.power) track by $index">★</span><br><br>
+
+              Description: <span ng-bind="vm.player.player.bio"></span>
+            </div>
+            <div flex>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

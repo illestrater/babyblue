@@ -7,8 +7,10 @@ function ApiService($rootScope, $http, AppSettings) {
     };
 
     service.getUser = jwtOrId => $http.get(`${AppSettings.baseURL}/get-user/${jwtOrId}`);
+    service.login = (user, password) => $http.post(`${AppSettings.baseURL}/login`, { user, password });
     service.register = user => $http.post(`${AppSettings.baseURL}/register`, user);
     service.getPlayers = user => $http.get(`${AppSettings.baseURL}/get-players`);
+    service.getProfile = username => $http.get(`${AppSettings.baseURL}/get-profile/${username}`);
 
     return service;
 }

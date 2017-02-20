@@ -6,6 +6,7 @@ const controllerComponents = [
     require('./frame/frame-ctrl'),
     require('./home/home-ctrl'),
     require('./players/players-ctrl'),
+    require('./profile/profile-ctrl'),
     require('./registration/registration-ctrl')
 ];
 

@@ -1,0 +1,127 @@
+<div class="main-content-container">
+  <div class="content-offset">
+
+    <div class="registration">
+      <div class="glass">
+        <div class="registration-container">
+          <div class="registration-title">Edit Player Profile</div>
+          <hr><br>
+
+          <form class="registration-form">
+
+
+            <h5><b>Basic Information</b></h5>Your email and password is kept private and encrypted
+            <hr>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>First name</label>
+                <input ng-model="user.first">
+              </md-input-container>
+              <md-input-container flex>
+                <label>Last Name</label>
+                <input ng-model="user.last">
+              </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>Email Address</label>
+                <input ng-model="user.email" type="email" disabled>
+              </md-input-container>
+              <md-input-container flex>
+                <label>Player Nickname (ex. King James)</label>
+                <input ng-model="user.nickname">
+              </md-input-container>
+            </div>
+
+
+            <h5><b>Player Information</b></h5>
+            Rate your game to the best of your ability
+            <hr>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Handling</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.handling" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Endurance</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.endurance" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Quickness</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.quickness" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Height</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.height" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Shooting</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.shooting" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span class="md-body-1">Power</span>
+              </div>
+              <md-slider flex md-discrete ng-model="player.power" step="1" min="1" max="5" aria-label="rating">
+              </md-slider>
+            </div>
+
+            <md-input-container flex>
+              <label>Player Description</label>
+              <textarea ng-model="player.bio" columns="1" md-maxlength="300"></textarea>
+            </md-input-container>
+
+            <!-- Not part of a team -->
+            <div ng-hide="team">
+              <h5><b>Create Your Own Team</b></h5>
+              You are not part of a team. Join one or create your own below.
+              <hr>
+              <div layout>
+                <div flex="50" layout >
+                  <md-input-container>
+                    <label>Your team name, captain!</label>
+                    <input type="text" ng-model="teamCreate" ng-disabled="teamSelect"/>
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+
+            <!-- Part of a team -->
+            <div ng-show="team">
+              <div flex>
+              <h5><div class="registration-title">Team: <b><span ng-bind="team"></span></div></b></h5></div><br>
+            </div>
+
+            <div layout="row">
+              <md-button class="md-raised md-primary" ng-click="save()">Save Profile</md-button><span style="position: absolute; right: 10%;"><md-button ng-click="password()">Change Password</md-button></span>
+            </div>
+
+            <br>
+
+            <md-toolbar class="md-warn" ng-show="error != ''">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex"><span ng-bind="error"></span></h2>
+              </div>
+            </md-toolbar>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

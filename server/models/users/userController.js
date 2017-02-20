@@ -26,7 +26,8 @@ function deleteSensitiveFields(user) {
         last:     user.last,
         username: user.username,
         email:    user.email,
-        id:       user.id
+        id:       user.id,
+        player:   user.player
     };
 }
 
@@ -74,7 +75,8 @@ exports.register = (req, res, next) => {
                     last:     req.body.last,
                     username: req.body.username,
                     email:    req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
+                    player:   req.body.player
                 };
 
                 if (req.body.fbInfo !== null) {
@@ -139,6 +141,17 @@ exports.getPlayers = (req, res, next) => {
         if (err) {
             res.status(500).send({ error: getErrorMessage(err) });
         } else {
+            return res.send(user);
+        }
+    });
+};
+
+exports.getProfile = (req, res, next) => {
+    User.findOne({ username: req.params.username }, (err, user) => {
+        if (err) {
+            res.status(500).send({ error: getErrorMessage(err) });
+        } else {
+            user = deleteSensitiveFields(user);
             return res.send(user);
         }
     });

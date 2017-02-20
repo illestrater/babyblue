@@ -1,6 +1,7 @@
 import frameView  from '../views/frame/frame-view.html';
 import homeView  from '../views/home/home-view.html';
 import playersView  from '../views/players/players-view.html';
+import profileView  from '../views/profile/profile-view.html';
 import registrationView  from '../views/registration/registration-view.html';
 
 /* @ngInject */
@@ -22,6 +23,12 @@ function OnConfig($stateProvider, $urlRouterProvider, $locationProvider, $mdThem
         controller:  'PlayersCtrl as vm',
         templateUrl: playersView,
         title:       'PlayersCtrl'
+    })
+    .state('frame.profile', {
+        url:         '/profile/:id',
+        controller:  'ProfileCtrl as vm',
+        templateUrl: profileView,
+        title:       'ProfileCtrl'
     })
     .state('frame.registration', {
         url:         '/registration',

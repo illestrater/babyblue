@@ -5,8 +5,22 @@ function PlayersCtrl($rootScope, $scope, $http, $log, ApiService) {
     ApiService.getPlayers()
     .then((players) => {
         vm.players = players.data;
-        console.log(vm.players);
     });
+
+    vm.search = (player) => {
+        let team = '';
+        if (player.team !== undefined) {
+            team = angular.lowercase(player.team).indexOf(vm.query || '') !== -1;
+        }
+        return (angular.lowercase(player.first).indexOf(vm.query || '') !== -1 ||
+                angular.lowercase(player.last).indexOf(vm.query || '') !== -1 ||
+                angular.lowercase(player.username).indexOf(vm.query || '') !== -1 ||
+                team);
+    };
+
+    vm.clearSearch = () => {
+        vm.query = undefined;
+    };
 }
 
 export default {

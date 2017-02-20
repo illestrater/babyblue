@@ -5,4 +5,5 @@ module.exports = (app) => {
     app.post('/login', users.login);
     app.get('/get-user/:id', users.getUser);
     app.get('/get-players', users.getPlayers);
+    app.get('/get-profile/:username', users.getProfile);
 };

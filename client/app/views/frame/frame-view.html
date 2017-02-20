@@ -24,21 +24,24 @@
     </span>
 </div>
 
-<div class="login-user">
-    <div class="mdl-textfield mdl-js-textfield textfield-login">
-        <input class="mdl-textfield__input" type="text" id="email" autocomplete="off" ng-model="email"/>
-        <label class="mdl-textfield__label" for="sample1"><span class="login-color">email</span></label>
+<span ng-show="!$root.user">
+    <div class="login-user">
+        <div class="mdl-textfield mdl-js-textfield textfield-login">
+            <input class="mdl-textfield__input" type="text" id="email" autocomplete="off" ng-model="vm.user"/>
+            <label class="mdl-textfield__label" for="sample1"><span class="login-color">email</span></label>
+        </div>
     </div>
-</div>
-<div class="login-pass">
-    <div class="mdl-textfield mdl-js-textfield textfield-login">
-        <input class="mdl-textfield__input" type="password" id="pass" ng-model="pass"/>
-        <label class="mdl-textfield__label" for="sample1"><span class="login-color">password</span></label>
+    <div class="login-pass">
+        <div class="mdl-textfield mdl-js-textfield textfield-login">
+            <input class="mdl-textfield__input" type="password" id="pass" ng-model="vm.password"/>
+            <label class="mdl-textfield__label" for="sample1"><span class="login-color">password</span></label>
+        </div>
     </div>
-</div>
+</span>
+
 <div class="login-buttons">
     <span ng-if="!$root.user">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="login()">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="vm.login()">
             <span class="login-button-color">Login</span>
         </button>
         <a href="/registration"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
@@ -47,10 +50,10 @@
         <div><a class="btnz share facebook" href="#" ng-click="facebook()"><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;Facebook Login</a></div>
     </span>
     <span ng-if="$root.user" class="ng-cloak">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="logout()">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="vm.logout()">
             <span class="login-button-color">Logout</span>
         </button>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="vm.loadPage('registration')">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="vm.loadPage('profile')">
             <span class="login-button-color">Profile</span>
         </button>
     </span>
