@@ -45,6 +45,7 @@
     "angular-cookies": "1.6.1",
     "angular-data-table": "^0.7.0",
     "angular-material": "^1.0.5",
+    "angular-ui-router": "^0.3.2",
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.10.4",
     "babel-eslint": "^7.1.1",
