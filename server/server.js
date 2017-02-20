@@ -1,15 +1,13 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.on('uncaughtException', (err) => {
+  console.log(err);
+});
 
-var mongoose = require('./mongoose'),
-    express = require('./express'),
-    passport = require('./passport');
+const config = require('./config/config.js');
+require('./mongoose')();
+const app = require('./express')();
 
-var db = mongoose();
-var app = express();
-var passport = passport();
-
-app.listen(4000);
+const port = config.apiServer.port;
 
 module.exports = app;
 
-console.log('Server running at http://localhost:4000');
+console.log(`Server running at ${port}`);

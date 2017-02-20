@@ -1,0 +1,36 @@
+.content-offset {
+    margin-right: 50px;
+}
+
+/* Home Styling */
+.banner {
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 800px;
+    width: 750px;
+    border: 10px solid $primary-color;
+    background: url('~app/assets/textures/cloth_alike.png');
+}
+
+.banner-title {
+    padding-top: 20px;
+    font-size: 96px;
+    line-height: 100%;
+    color: $primary-color;
+}
+
+.banner-winner {
+    padding-top: 250px;
+    font-size: 120px;
+    font-family: 'DaStreets', serif;
+}
+
+.banner-year {
+    padding-top: 250px;
+    font-size: 96px;
+    color: $primary-color;
+}

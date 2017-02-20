@@ -1,10 +1,9 @@
-var config = require('./config');
-    mongoose = require('mongoose');
+const config = require('./config/config');
+const mongoose = require('mongoose');
 
-module.exports = function() {
-    var db = mongoose.connect(config.db);
-
-    require('./components/users/userModel');
+module.exports = () => {
+    const db = mongoose.connect(config.mongoose.db);
+    require('./models/users/userModel');
 
     return db;
-}
+};

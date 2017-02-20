@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'DaStreets';
+    src: url('~app/assets/fonts/DaStreets.eot');
+}
+@font-face {
+    font-family: 'DaStreets';
+    src: url('~app/assets/fonts/DaStreets.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin:     0;
+    padding:    0;
+    outline:    none;
+}
+
+body {
+    overflow:    hidden;
+}
+
+.material-icons.md-14 { font-size: 14px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-20 { font-size: 20px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+@import '../../views/frame/frame-style';
+@import '../../views/home/home-style';
+@import '../../views/players/players-style';
+@import '../../views/registration/registration-style';
+@import './lib/compass';

@@ -1,0 +1,29 @@
+<div class="main-content-container">
+    <div class="content-offset">
+        <div class="players">
+            <div layout="" layout-sm="column" class="player-search">
+                <md-input-container flex="" class="md-default-theme">
+                    <label for="input_10">Search for player name, nickname, team</label>
+                    <input ng-model="query" class="ng-pristine ng-valid md-input ng-touched" id="input_10" tabindex="0" aria-invalid="false">
+                </md-input-container>
+                <div layout="row" style="position: relative; padding-right: 70px;">
+                    <button class="md-button md-default-theme" ng-click="clearSearch()" style="position: absolute; bottom: 30%;" tabindex="0"><span class="ng-scope">Clear</span></button>
+                </div>
+            </div>
+            <div layout="row" layout-wrap>
+                <div flex="33" ng-repeat="player in vm.players track by $id(player)">
+                    <md-card>
+                        <md-card-content align="center">
+                            <b>{{ player.first }} {{ player.last }}</b><br>
+                            <em>{{ player.username }}</em><br>
+                        </md-card-content>
+                        <div class="md-actions" layout="row" layout-align="end center">
+                            <md-button>Profile</md-button>
+                            <md-button>Talk</md-button>
+                        </div>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

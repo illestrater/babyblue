@@ -1,0 +1,79 @@
+<div id="fb-root"></div>
+
+<div id="info-banner" ng-bind="info">
+    <!--      <span ng-bind="info"></span>-->
+</div>
+
+<section class="frame">
+    <div class="top-bar"></div>
+    <div class="top-bar-shadow"></div>
+    <div class="left-triangle"></div>
+    <div class="right-triangle"></div>
+    <div class="left-bar-shadow"></div>
+    <div class="left-bar"></div>
+    <div class="right-bar-shadow"></div>
+    <div class="right-bar"></div>
+</section>
+
+<img ng-src="{{ vm.logo }}" class="logo"/>
+
+<div class="login-decoration">
+    <span ng-if="$root.user">
+        Welcome<br>
+        {{ $root.user.username }}
+    </span>
+</div>
+
+<div class="login-user">
+    <div class="mdl-textfield mdl-js-textfield textfield-login">
+        <input class="mdl-textfield__input" type="text" id="email" autocomplete="off" ng-model="email"/>
+        <label class="mdl-textfield__label" for="sample1"><span class="login-color">email</span></label>
+    </div>
+</div>
+<div class="login-pass">
+    <div class="mdl-textfield mdl-js-textfield textfield-login">
+        <input class="mdl-textfield__input" type="password" id="pass" ng-model="pass"/>
+        <label class="mdl-textfield__label" for="sample1"><span class="login-color">password</span></label>
+    </div>
+</div>
+<div class="login-buttons">
+    <span ng-if="!$root.user">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="login()">
+            <span class="login-button-color">Login</span>
+        </button>
+        <a href="/registration"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <span class="login-button-color">Register</span>
+        </button></a>
+        <div><a class="btnz share facebook" href="#" ng-click="facebook()"><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;Facebook Login</a></div>
+    </span>
+    <span ng-if="$root.user" class="ng-cloak">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="logout()">
+            <span class="login-button-color">Logout</span>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="vm.loadPage('registration')">
+            <span class="login-button-color">Profile</span>
+        </button>
+    </span>
+</div>
+
+
+<div class="login-facebook">
+    <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="false"></div>
+</div>
+
+<div class="left-sidebar">
+    <ul class="side-nav">
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('home')">Home</a></li>
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('tourney')">Tourney</a></li>
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('players')">Players</a></li>
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('history')">History</a></li>
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('game')">Game</a></li>
+        <li><a href="" class="menu-item" ng-click="vm.loadPage('contact')">Contact</a></li>
+    </ul>
+</div>
+
+<div class="right-sidebar">
+    My team: None
+</div>
+
+<div ui-view></div>

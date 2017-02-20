@@ -1,22 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const RootCtrl = require('./common/root-controller');
 
-/* Route Pages */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Baby Blue' });
-});
+const routes = module.exports = {};
 
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Baby Blue' });
-});
+routes.init = function _init(app) {
+    RootCtrl.init(app);
 
-router.get('/registration', function(req, res, next) {
-  res.render('index', { title: 'Baby Blue' });
-});
+    // Root Handler
+    app.get('/api', RootCtrl.getRoutes);
 
-router.get('/players', function(req, res, next) {
-  res.render('index', { title: 'Baby Blue' });
-});
-
-
-module.exports = router;
+    return app;
+};
